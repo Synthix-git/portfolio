@@ -1,0 +1,666 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XYZ Componentes &ndash; Tornearia e maquinação de precisão em Albergaria-a-Velha</title>
+  <meta name="description" content="XYZ Componentes fabrica peças torneadas e subconjuntos metálicos. Tornearia multifuso, CNC e centros de maquinação com controlo dimensional 100%. Orçamentos rápidos para séries e protótipos." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://tornosxyz.pt/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="XYZ Componentes" />
+  <meta property="og:url" content="https://tornosxyz.pt/" />
+  <meta property="og:title" content="XYZ Componentes &ndash; Tornearia e maquinação de precisão" />
+  <meta property="og:description" content="Torneamento multifuso, CNC e centros de maquinação. Qualidade certificada, prazos curtos e equipas dedicadas." />
+  <meta property="og:image" content="https://tornosxyz.pt/imgs/hero-bg.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="XYZ Componentes &ndash; Tornearia e maquinação de precisão" />
+  <meta name="twitter:description" content="Peças torneadas, maquinações, montagem e controlo dimensional em Albergaria-a-Velha." />
+  <meta name="twitter:image" content="https://tornosxyz.pt/imgs/hero-bg.png" />
+  <meta name="theme-color" content="#0d47a1" />
+  <meta name="author" content="XYZ Componentes" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    const PLACEHOLDER = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
+        <rect width="100%" height="100%" fill="#f1f5ff"/>
+        <rect x="12" y="12" width="876" height="576" rx="14" ry="14" fill="#ffffff" stroke="#0d47a1" stroke-width="3"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter,Arial" font-size="32" fill="#0b1b3a">900x600 placeholder</text>
+      </svg>`
+    );
+
+    function byId(id) { return document.getElementById(id); }
+
+    async function loadCounter() {
+      try {
+        const response = await fetch('counter.php', { cache: 'no-store' });
+        const payload = await response.json();
+        const total = Number(payload.total);
+        const target = document.getElementById('visits');
+        if (target && Number.isFinite(total)) {
+          target.textContent = total.toLocaleString('pt-PT');
+        }
+      } catch (error) {
+        // Ignora falhas silenciosamente
+      }
+    }
+    class CardSlider {
+      constructor(root, items) {
+        this.root = root;
+        this.track = root.querySelector('.slider-track');
+        this.viewport = root.querySelector('.slider-viewport');
+        this.dotsWrap = root.querySelector('.slider-dots');
+        this.prevBtn = root.querySelector('.slider-prev');
+        this.nextBtn = root.querySelector('.slider-next');
+        this.items = items;
+        this.idx = 0;
+        this.gap = 20;
+        this.perView = 3;
+        this.render();
+        this.prevBtn.addEventListener('click', () => this.move(-1));
+        this.nextBtn.addEventListener('click', () => this.move(1));
+        if ('ResizeObserver' in window) {
+        new ResizeObserver(() => this.render()).observe(this.viewport);
+        } else {
+        window.addEventListener('resize', () => this.render());
+        }
+      }
+      calcPerView() {
+        const width = this.viewport.clientWidth;
+        if (width < 560) return 1;
+        if (width < 960) return 2;
+        return 3;
+      }
+      move(step) {
+        const pages = Math.max(1, this.items.length - this.perView + 1);
+        this.idx = Math.min(pages - 1, Math.max(0, this.idx + step));
+        this.update();
+      }
+      go(index) {
+        const pages = Math.max(1, this.items.length - this.perView + 1);
+        this.idx = Math.min(pages - 1, Math.max(0, index));
+        this.update();
+      }
+      render() {
+        this.perView = this.calcPerView();
+        // gap menor no mobile para não “empurrar” a largura
+        this.gap = (this.perView === 1 ? 12 : 20);
+
+        const viewportWidth = this.viewport.clientWidth;
+        // quando é 1 por vista, deixa o CSS mandar com width:100%
+        const cardWidth = this.perView === 1
+        ? viewportWidth
+        : (viewportWidth - this.gap * (this.perView - 1)) / this.perView;
+
+        this.track.style.columnGap = `${this.gap}px`;
+
+        this.track.innerHTML = this.items.map(item => `
+          <article class="card card-slide" style="width:${cardWidth}px">
+            <div class="card-media">
+              <img src="${item.src || PLACEHOLDER}" alt="${item.cap || ''}">
+            </div>
+            <div class="card-body">
+              <h4>${item.title || item.cap || 'Título'}</h4>
+              ${item.desc ? `<p class="muted">${item.desc}</p>` : ''}
+            </div>
+          </article>
+        `).join('');
+
+        const pages = Math.max(1, this.items.length - this.perView + 1);
+        this.dotsWrap.innerHTML = '';
+        for (let i = 0; i < pages; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'dot' + (i === this.idx ? ' active' : '');
+          dot.addEventListener('click', () => this.go(i));
+          this.dotsWrap.appendChild(dot);
+        }
+        this.update(true);
+      }
+      update(initial = false) {
+        const card = this.track.querySelector('.card-slide');
+        const cardWidth = card ? card.getBoundingClientRect().width : 0;
+        const offset = (cardWidth + this.gap) * this.idx;
+
+        const totalWidth = (cardWidth + this.gap) * this.items.length - this.gap;
+        const viewportWidth = this.viewport.clientWidth;
+        const maxTranslate = Math.max(0, totalWidth - viewportWidth);
+        const translate = Math.min(offset, maxTranslate);
+
+        this.track.style.transform = `translateX(${-translate}px)`;
+
+        const pages = Math.max(1, this.items.length - this.perView + 1);
+        [...this.dotsWrap.children].forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.idx);
+        });
+        this.prevBtn.disabled = this.idx === 0;
+        this.nextBtn.disabled = this.idx >= pages - 1;
+
+        if (initial) {
+          this.track.style.justifyContent = totalWidth < viewportWidth ? 'center' : 'flex-start';
+        }
+      }
+    }
+    async function handleContact(event) {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const telefoneRaw = form.telefone ? form.telefone.value.trim() : '';
+      const telefoneCode = form.telefone_cc ? form.telefone_cc.value : '';
+      const telefoneFull = telefoneRaw ? `${telefoneCode} ${telefoneRaw}`.trim() : '';
+      const data = {
+        nome: form.nome.value.trim(),
+        email: form.email.value.trim(),
+        telefone: telefoneFull,
+        mensagem: form.mensagem.value.trim(),
+        hp: form.website.value.trim()
+      };
+      if (!data.nome || !data.email || !data.mensagem) {
+        toast('Preencha Nome, Email e Mensagem.', 'erro');
+        return;
+      }
+      try {
+        const response = await fetch('mail.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const payload = await response.json();
+        if (payload.success) {
+          toast('Mensagem enviada com sucesso. Obrigado!', 'ok');
+          form.reset();
+        } else {
+          toast(payload.message || 'Não foi possível enviar, tente novamente.', 'erro');
+        }
+      } catch (error) {
+        toast('Falha de ligação. Verifique a sua rede.', 'erro');
+      }
+    }
+
+    function toast(message, type = 'ok') {
+      const notification = document.createElement('div');
+      notification.className = 'toast ' + (type === 'ok' ? 'ok' : 'erro');
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      requestAnimationFrame(() => notification.classList.add('show'));
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 250);
+      }, 2600);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCounter();
+      const yearTarget = document.getElementById('year');
+      if (yearTarget) {
+        yearTarget.textContent = new Date().getFullYear();
+      }
+
+      new CardSlider(byId('slider-maquinas'), [
+        { title: 'Torno multifusos', desc: 'Capacidade até Ø20 mm', src: 'imgs/galeria/multifusos.png' /*, cap: 'Torno multifuso XYZ' */ },
+        { title: 'Torno CNC', desc: 'Eixos programáveis até Ø40 mm', src: 'imgs/galeria/cnc.png' /*, cap: 'Torno CNC com ferramentas' */ },
+        { title: 'Zona de produção', desc: 'A nossa zona de produção', src: 'imgs/galeria/zonaproducao.png' /*, cap: 'Centro de maquinação vertical' */ },
+        { title: 'Estampagem / Prensa', desc: 'Ferramentas dedicadas ao projeto', src: 'imgs/galeria/prensa.png' /*, cap: 'Prensa hidráulica' */ },
+      ]);
+
+      new CardSlider(byId('slider-pecas'), [
+        { title: 'Peças em inox', desc: 'AISI 303, 304 e 316L com acabamento polido', src: 'imgs/galeria/inox1.png' /*, cap: 'Componente em inox' */ },
+        { title: 'Peças em latão', desc: 'Torneamento de ligas de alta usinabilidade', src: 'imgs/galeria/latao1.png' /*, cap: 'Peça em latão com rosca' */ },
+        { title: 'Peças em alumínio', desc: 'Séries leves com anodização opcional', src: 'imgs/galeria/aluminio1.png' /*, cap: 'Peça em alumínio anodizada' */ },
+        { title: 'Peças em aço', desc: 'Tratamentos térmicos e superficiais incluídos', src: 'imgs/galeria/aco1.png' /*, cap: 'Componente em aço torneado' */ },
+        { title: 'Peças em aço', desc: 'Tratamentos térmicos e superficiais incluídos', src: 'imgs/galeria/aco2.png' /*, cap: 'Peça em aço com acabamento' */ },
+        { title: 'Peças em aço', desc: 'Tratamentos térmicos e superficiais incluídos', src: 'imgs/galeria/aco3.png' /*, cap: 'Subconjunto soldado em aço' */ },
+        { title: 'Cravação', desc: 'Inserção de porcas e componentes metálicos', src: 'imgs/galeria/cravacao.png' /*, cap: 'Peça cravada' */ },
+        { title: 'Soldadura', desc: 'Montagem de estruturas e tubagens', src: 'imgs/galeria/soldadura.png' /*, cap: 'Estrutura soldada' */ },
+        { title: 'Conjuntos montados', desc: 'Peças prontas a montar em linha', src: 'imgs/galeria/conjuntos.png' /*, cap: 'Conjunto montado' */ }
+      ]);
+
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.getElementById('primary-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('open', !expanded);
+        });
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-border"></div>
+  <div class="container nav-inner">
+    <a href="#hero" class="brand">
+      <img src="imgs/logo.png" alt="Logótipo XYZ Componentes" height="36" />
+      <span>XYZ Componentes</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-menu" class="menu" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Destaques</a>
+      <a href="#galerias">Galerias</a>
+      <a href="#equipamentos">Equipamentos</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#qualidade">Qualidade</a>
+      <a href="#contactos" class="btn btn-white nav-cta">Pedir Orçamento</a>
+    </nav>
+  </div>
+</header>
+<section id="hero" class="hero" style="--hero:url('imgs/hero-bg.png')">
+  <div class="container hero-inner">
+    <span class="eyebrow">Fabricação de precisão em Albergaria-a-Velha</span>
+    <h1>Precisão que se nota. Prazos que se cumprem.</h1>
+    <p class="lead">
+      A <strong>XYZ Componentes</strong> maquina peças torneadas e subconjuntos para a indústria, combinando tornos multifusos, CNC e centros de maquinação com equipas dedicadas a responder rapidamente.
+    </p>
+    <ul class="hero-tags">
+      <li>Produção em série e protótipos</li>
+      <li>Controlo dimensional 100%</li>
+      <li>Entrega urgente em 24h</li>
+    </ul>
+    <div class="row gap hero-cta">
+      <a class="btn" href="https://wa.me/351919666163?text=Olá%20João,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">Falar com o João</a>
+      <a class="btn btn-outline-light" href="https://wa.me/351939373855?text=Olá%20Marta,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">Falar com a Marta</a>
+      <a class="btn btn-white" href="#contactos">Pedir Orçamento</a>
+    </div>
+  </div>
+</section>
+<section class="section soft-bg" aria-label="Principais indicadores">
+  <div class="container metric-grid">
+    <article class="metric">
+      <span class="metric-value">+25</span>
+      <h3>Máquinas ativas</h3>
+      <p>Multifusos, CNC e centros de maquinação preparados para qualquer volume.</p>
+    </article>
+    <article class="metric">
+      <span class="metric-value">0,01 mm</span>
+      <h3>Tolerâncias</h3>
+      <p>Monitorização contínua com registos digitais por lote e ficha de controlo.</p>
+    </article>
+    <article class="metric">
+      <span class="metric-value">4 000 m&sup2;</span>
+      <h3>Área produtiva</h3>
+      <p>Fluxos logísticos otimizados e stocks consignados por cliente.</p>
+    </article>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#servicos" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+<section id="servicos" class="section" aria-labelledby="servicos-heading">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="servicos-heading">Serviços</h2>
+      <p class="section-lead">Capacidade instalada para séries longas, curtas ou protótipos com garantia de repetibilidade e rastreabilidade.</p>
+    </div>
+    <div class="grid three service-grid">
+      <article class="card service">
+        <span class="icon-circle">01</span>
+        <h3>Tornearia de precisão</h3>
+        <p>Produção de peças entre Ø2 mm e Ø40 mm em tornos multifusos, CNC e monofusos, ajustando o setup ao volume ideal.</p>
+      </article>
+      <article class="card service">
+        <span class="icon-circle">02</span>
+        <h3>Maquinações complementares</h3>
+        <p>Fresagem, furação, serragem e roscagem com integração de transfer e centros multi-face.</p>
+      </article>
+      <article class="card service">
+        <span class="icon-circle">03</span>
+        <h3>Montagem e acabamento</h3>
+        <p>Cravação, soldadura, tratamentos térmicos e superficiais com parceiros certificados e inspeção final interna.</p>
+      </article>
+    </div>
+    <div class="card material-card">
+      <h3>Materiais trabalhados</h3>
+      <p>Inox (AISI 303/304/316L), aços-liga, alumínio, latão e cobre. Rastreabilidade total desde a receção da matéria-prima até ao lote expedido.</p>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#diferenciais" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+<section id="diferenciais" class="section soft-bg" aria-labelledby="diferenciais-heading">
+  <div class="container">
+    <h2 id="diferenciais-heading">O que nos diferencia</h2>
+    <div class="grid three value-grid">
+      <article class="value card">
+        <h3>Planeamento transparente</h3>
+        <p>Compromissos claros com visibilidade da capacidade e acompanhamento semanal dos pedidos.</p>
+      </article>
+      <article class="value card">
+        <h3>Qualidade integrada</h3>
+        <p>Protocolos SPC, calibradores digitais e auditorias internas garantem conformidade em qualquer série.</p>
+      </article>
+      <article class="value card">
+        <h3>Equipa especializada</h3>
+        <p>Programadores e operadores com formação contínua focados em otimizar ciclo, desperdício e energia.</p>
+      </article>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#galerias" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+
+<section id="galerias" class="section" aria-labelledby="galerias-heading">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="galerias-heading">Galerias</h2>
+      <p class="section-lead">Conheça alguns dos equipamentos e peças que fabricamos diariamente.</p>
+    </div>
+    <div class="grid two">
+      <div class="slider card" id="slider-maquinas">
+        <div class="slider-head">
+          <h3>Máquinas</h3>
+          <div class="slider-ctrl">
+            <button class="slider-prev" type="button" aria-label="Anterior">&lsaquo;</button>
+            <button class="slider-next" type="button" aria-label="Seguinte">&rsaquo;</button>
+          </div>
+        </div>
+        <div class="slider-viewport">
+          <div class="slider-track"></div>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+      <div class="slider card" id="slider-pecas">
+        <div class="slider-head">
+          <h3>Peças</h3>
+          <div class="slider-ctrl">
+            <button class="slider-prev" type="button" aria-label="Anterior">&lsaquo;</button>
+            <button class="slider-next" type="button" aria-label="Seguinte">&rsaquo;</button>
+          </div>
+        </div>
+        <div class="slider-viewport">
+          <div class="slider-track"></div>
+        </div>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#equipamentos" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+
+<section id="equipamentos" class="section soft-bg" aria-labelledby="equipamentos-heading">
+  <div class="container">
+    <div class="section-heading">
+      <h2 id="equipamentos-heading">Conjunto de equipamentos disponíveis</h2>
+      <p class="section-lead">Capacidade instalada para responder a séries longas, médias ou protótipos com flexibilidade e redundância de equipamento.</p>
+    </div>
+    <div class="grid three equipment-grid">
+      <article class="card equipment">
+        <h3>Tornos multifuso</h3>
+        <ul>
+          <li>Ø2 &ndash; Ø20 mm</li>
+          <li>Até 8 fusos com alimentação automática</li>
+          <li>Barras de latão, inox e aço</li>
+        </ul>
+      </article>
+      <article class="card equipment">
+        <h3>Tornos CNC</h3>
+        <ul>
+          <li>Ø6 &ndash; Ø40 mm</li>
+          <li>Subfuso, eixo Y e ferramentas motorizadas</li>
+          <li>Programação ISO e simulação offline</li>
+        </ul>
+      </article>
+      <article class="card equipment">
+        <h3>Centros de maquinação</h3>
+        <ul>
+          <li>Furação e fresagem multi-face</li>
+          <li>Paletização para protótipos</li>
+          <li>Reposicionamentos automáticos</li>
+        </ul>
+      </article>
+      <article class="card equipment">
+        <h3>Transfer e linha dedicada</h3>
+        <ul>
+          <li>Operações sequenciais em cadência alta</li>
+          <li>Montagem de subconjuntos</li>
+          <li>Integração de controlo 100%</li>
+        </ul>
+      </article>
+      <article class="card equipment">
+        <h3>Estampagem &amp; prensa</h3>
+        <ul>
+          <li>Ferramental dedicado ao projeto</li>
+          <li>Prensas excêntricas e hidráulicas</li>
+          <li>Alimentação automática de fita</li>
+        </ul>
+      </article>
+      <article class="card equipment">
+        <h3>Acabamento &amp; controlo</h3>
+        <ul>
+          <li>Rebarbação, marcação e lavagem</li>
+          <li>Soldadura MIG/MAG e cravação</li>
+          <li>Metrologia digital SPC</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#empresa" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+
+<section id="empresa" class="section soft-bg" aria-labelledby="empresa-heading">
+  <div class="container grid two">
+    <div>
+      <h2 id="empresa-heading">Quem somos</h2>
+      <p>Fundada em 2023, a <strong>XYZ Componentes</strong> apoia fabricantes que precisam de parceiros de tornearia fiáveis, com prazos curtos e custos controlados.</p>
+      <ul class="bullets">
+        <li>Parcerias de longo prazo com stocks consignados e VMI.</li>
+        <li>Comunicação técnica direta entre cliente, programação e qualidade.</li>
+        <li>Peças unitárias, pequenas e médias séries com tempos de setup reduzidos.</li>
+      </ul>
+    </div>
+    <div class="card info timeline">
+      <h3>Como trabalhamos</h3>
+      <ol>
+        <li><strong>Análise técnica:</strong> estudo da ficha e aconselhamento de tolerâncias.</li>
+        <li><strong>Proposta detalhada:</strong> prazos, ferramental e plano de controlo.</li>
+        <li><strong>Industrialização:</strong> protótipo validado antes da série.</li>
+        <li><strong>Produção:</strong> monitorização SPC e registo de lotes.</li>
+        <li><strong>Logística:</strong> embalamento dedicado e entregas combinadas.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#qualidade" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+<section id="qualidade" class="section quality highlight" aria-labelledby="qualidade-heading">
+  <div class="container quality-inner">
+    <div class="quality-copy">
+      <span class="quality-eyebrow">Qualidade certificada</span>
+      <h2 id="qualidade-heading">Processos controlados, peças consistentes.</h2>
+      <p>Garantimos rastreabilidade total e inspeções em cada fase de produção para manter tolerâncias apertadas e entregas sem surpresas.</p>
+      <ul class="quality-points">
+        <li>
+          <span class="quality-icon" aria-hidden="true">🧾</span>
+          <div>
+            <strong>Checklists digitais</strong>
+            <span>Registos por operador e alertas em tempo real.</span>
+          </div>
+        </li>
+        <li>
+          <span class="quality-icon" aria-hidden="true">📏</span>
+          <div>
+            <strong>Metrologia interna</strong>
+            <span>Laboratório climatizado e calibração periódica.</span>
+          </div>
+        </li>
+        <li>
+          <span class="quality-icon" aria-hidden="true">🔁</span>
+          <div>
+            <strong>Melhoria contínua</strong>
+            <span>Kaizen, SPC e auditorias cruzadas em cada série.</span>
+          </div>
+        </li>
+      </ul>
+      <a class="btn btn-white" href="imgs/certificado.pdf" target="_blank" rel="noopener">Descarregar certificação</a>
+    </div>
+    <div class="quality-panel" role="presentation">
+      <div class="quality-figure">
+        <img src="imgs/satisfacao.png" alt="Matriz de satisfação dos clientes focada em qualidade, prazos e custos" loading="lazy" decoding="async" />
+      </div>
+      <p class="quality-note">Certificações ISO 9001 e IATF 16949 em curso &middot; Auditorias de clientes aprovadas.</p>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#contactos" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+<section id="contactos" class="section soft-bg" aria-labelledby="contactos-heading">
+  <div class="container grid two contact-grid">
+    <div class="card contact-card">
+      <h2 id="contactos-heading">Contactos</h2>
+       <div class="contact-block">
+        <p class="legal-note"><strong>XYZ - João Remígio Unipessoal LDA</strong></p>
+        <p class="legal-note"><strong>NIF &mdash;</strong> 517470098</p>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label">Localização</span>
+        <p>Variante do Sobreiro, Lote 2 &mdash; Zona Industrial<br />3850-288 Albergaria-a-Velha</p>
+        <a class="btn outline map-btn" href="https://maps.app.goo.gl/NKu413inJEdfmnZd8" target="_blank" rel="noopener">Ver no mapa</a>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label">Email</span>
+        <a class="contact-link" href="mailto:xyz23comercial@gmail.com">xyz23comercial@gmail.com</a>
+      </div>
+      <div class="contact-block">
+        <span class="contact-label">Telefone</span>
+        <ul class="contact-list">
+          <li><strong>João Remígio</strong> &mdash; <a href="tel:+351919666163">+351 919 666 163</a></li>
+          <li><strong>Marta Sousa</strong> &mdash; <a href="tel:+351939373855">+351 939 373 855</a></li>
+        </ul>
+        <div class="contact-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/351919666163?text=Olá%20João,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">WhatsApp João</a>
+          <a class="btn btn-whatsapp alt" href="https://wa.me/351939373855?text=Olá%20Marta,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">WhatsApp Marta</a>
+        </div>
+      </div>
+      <p class="muted">Horário: 08h00 &ndash; 18h00 &middot; visitas mediante agendamento.</p>
+      <p class="legal-note">Ambos os números correspondem a <strong>chamada para rede móvel nacional.</strong></p>
+    </div>
+    <form class="card form contact-form" onsubmit="handleContact(event)" aria-label="Formulário de pedido de orçamento">
+      <h3>Pedir orçamento</h3>
+      <p class="muted">Descreva o seu projeto e respondemos no máximo em 24 horas úteis.</p>
+      <div class="form-grid">
+        <label><span>Nome</span><input required name="nome" placeholder="O seu nome" /></label>
+        <label><span>Email</span><input required type="email" name="email" placeholder="email@exemplo.pt" /></label>
+        <label class="full phone-field"><span>Telefone</span>
+          <div class="phone-input">
+            <select name="telefone_cc" aria-label="Indicativo telefónico">
+              <option value="+351" selected>&#x1F1F5;&#x1F1F9; (+351)</option>
+              <option value="+34">&#x1F1EA;&#x1F1F8; (+34)</option>
+              <option value="+33">&#x1F1EB;&#x1F1F7; (+33)</option>
+              <option value="+44">&#x1F1EC;&#x1F1E7; (+44)</option>
+              <option value="+49">&#x1F1E9;&#x1F1EA; (+49)</option>
+              <option value="+39">&#x1F1EE;&#x1F1F9; (+39)</option>
+              <option value="+31">&#x1F1F3;&#x1F1F1; (+31)</option>
+              <option value="+41">&#x1F1E8;&#x1F1ED; (+41)</option>
+              <option value="+55">&#x1F1E7;&#x1F1F7; (+55)</option>
+              <option value="+1">&#x1F1FA;&#x1F1F8; (+1)</option>
+            </select>
+            <input type="tel" name="telefone" placeholder="Número de contacto" inputmode="tel" />
+          </div>
+        </label>
+        <label class="full"><span>Mensagem</span><textarea required name="mensagem" placeholder="Descreva o que precisa"></textarea></label>
+        <input type="text" name="website" style="position:absolute;left:-9999px;top:-9999px" tabindex="-1" autocomplete="off" />
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Enviar</button>
+        <small class="muted">Vai receber confirmação imediata aqui no site.</small>
+      </div>
+    </form>
+  </div>
+  <div class="section-nav"><a class="section-next" href="#cta-final" aria-label="Ir para a próxima secção">Seguinte <span class="icon">&#8595;</span></a></div>
+</section>
+<section id="cta-final" class="section cta highlight" aria-label="Próximo passo">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <span class="cta-eyebrow">Próximo passo</span>
+      <h2>Vamos fabricar o seu próximo lote?</h2>
+      <p>Envie desenhos ou ficheiros STEP e receba uma proposta técnica com prazos, ferramental e plano de controlo em apenas 48 horas úteis.</p>
+      <ul class="cta-points">
+        <li>
+          <span class="cta-icon" aria-hidden="true">⏱️</span>
+          <div>
+            <strong>Resposta rápida</strong>
+            <span>Orçamentos com capacidade e lead time confirmados.</span>
+          </div>
+        </li>
+        <li>
+          <span class="cta-icon" aria-hidden="true">🧪</span>
+          <div>
+            <strong>Suporte técnico</strong>
+            <span>Aconselhamento de tolerâncias, acabamentos e testes.</span>
+          </div>
+        </li>
+        <li>
+          <span class="cta-icon" aria-hidden="true">📦</span>
+          <div>
+            <strong>Entrega assegurada</strong>
+            <span>Embalamento dedicado e logística combinada.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="cta-panel" role="complementary">
+      <div class="cta-actions">
+        <a class="btn btn-white" href="mailto:xyz23comercial@gmail.com?subject=Pedido%20de%20Orçamento%20-%20XYZ">Enviar ficheiros</a>
+        <a class="btn btn-outline-light" href="tel:+351919666163">Agendar chamada</a>
+      </div>
+      <p class="cta-note">Aceitamos STEP, PDF e DXF até 25&nbsp;MB. Para ficheiros maiores, utilize WeTransfer ou partilhe um link cloud.</p>
+      <div class="cta-contact">
+        <span>Preferes WhatsApp?</span>
+        <a class="cta-link" href="https://wa.me/351919666163?text=Olá%20João,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">Falar com o João</a>
+        <a class="cta-link" href="https://wa.me/351939373855?text=Olá%20Marta,%20preciso%20de%20um%20orçamento%20XYZ." target="_blank" rel="noopener">Falar com a Marta</a>
+      </div>
+    </div>
+  </div>
+  <div class="section-nav"><a class="section-top" href="#hero" aria-label="Voltar ao topo">Voltar ao topo <span class="icon">&#8593;</span></a></div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span> © Copyright 2025 XYZ &mdash; João Remígio Unipessoal LDA &mdash; Code by <a href="https://playmedusa.ovh/synthix" target="_blank" rel="noopener">Gabriel "Synthix" Silva</a></span>
+    <span>Visitas: <strong id="visits">&mdash;</strong></span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://tornosxyz.pt/#empresa",
+  "name": "XYZ Componentes",
+  "description": "Tornearia de precisão e maquinação CNC em Albergaria-a-Velha, Portugal.",
+  "url": "https://tornosxyz.pt/",
+  "image": "https://tornosxyz.pt/imgs/hero-bg.png",
+  "email": "mailto:xyz23comercial@gmail.com",
+  "telephone": "+351919666163",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Variante do Sobreiro, Lote 2 - Zona Industrial",
+    "postalCode": "3850-288",
+    "addressLocality": "Albergaria-a-Velha",
+    "addressRegion": "Aveiro",
+    "addressCountry": "PT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.701664,
+    "longitude": -8.501641
+  },
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "sameAs": [
+    "https://www.linkedin.com/company/xyz-componentes"
+  ]
+}
+</script>
+</body>
+</html>
