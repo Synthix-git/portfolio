@@ -1,0 +1,1 @@
+ALTER TABLE players ADD vip_status VARCHAR(50) NULL;
