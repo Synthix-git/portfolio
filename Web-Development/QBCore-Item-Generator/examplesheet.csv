@@ -1,0 +1,5 @@
+Item Name,Label,Weight (grams),Type,Image,Unique,Usable,Close Inventory,Description,Ammo Type
+water_bottle,Water,500,item,water.png,FALSE,TRUE,TRUE,A bottle of water.,
+bread,Bread,200,item,bread.png,FALSE,TRUE,FALSE,A loaf of bread.,
+weapon_pistol,Pistol,1000,weapon,pistol.png,FALSE,TRUE,TRUE,A standard pistol.,ammo_9mm
+weapon_katana,Katana,500,weapon,katana.png,FALSE,TRUE,TRUE,A katana,nil

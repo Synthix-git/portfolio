@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QBCore Item List Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"], input[type="number"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .button-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .button-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .button-danger:hover {
+            background-color: #c82333;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .output {
+            margin-top: 20px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .item-list {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>QBCore Item List Generator</h2>
+        <form id="itemForm">
+            <input type="text" id="name" placeholder="Item Name" required>
+            <input type="text" id="label" placeholder="Item Label" required>
+            <input type="number" id="weight" placeholder="Weight (grams)" required>
+            <select id="type" required onchange="toggleAmmoType()">
+                <option value="item">Item</option>
+                <option value="weapon">Weapon</option>
+            </select>
+            <input type="text" id="ammoType" placeholder="Ammo Type" class="hidden">
+            <input type="text" id="image" placeholder="Image Filename (e.g. item.png)" required>
+            <label>
+                <input type="checkbox" id="unique"> Unique
+            </label>
+            <label>
+                <input type="checkbox" id="useable"> Usable
+            </label>
+            <label>
+                <input type="checkbox" id="shouldClose"> Close Inventory
+            </label>
+            <textarea id="description" placeholder="Description" rows="3" required></textarea>
+            <div class="button-group">
+                <button type="button" class="button-primary" onclick="addItem()">Add Item</button>
+                <button type="button" class="button-danger" onclick="cancelLastItem()">Undo</button>
+                <button type="button" class="button-danger" onclick="clearItems()">Clear List</button>
+                <button type="button" class="button-primary" onclick="copyToClipboard()">Copy</button>
+            </div>
+            <input type="file" id="fileInput" accept=".csv" onchange="loadCSVFile(event)">
+        </form>
+        <div class="item-list" id="itemList"></div>
+        <div class="output" id="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
