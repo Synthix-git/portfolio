@@ -44,8 +44,8 @@ Frontend and documentation projects.
 
 - **[PortfolioWebsite](./Web-Development/PortfolioWebsite)** — my personal web portfolio.  
 - **[MedusaWebsite](./Web-Development/MedusaWebsite)** — Play Medusa website.  
-- **[GameTargetBlitz](./Web-Development/GameTargetBlitz)** — visual design doc for the UE5 project.  
-- **[XYZWebsite](./Web-Development/XYZWebsite)** — experimental sandbox.
+- **[GameTargetBlitz](./Web-Development/GameTargetBlitz)** — Visual aim browser game test project.  
+- **[XYZWebsite](./Web-Development/XYZWebsite)** — Website sold to TornosXYZ.pt -> Before information update.
 
 ---
 
