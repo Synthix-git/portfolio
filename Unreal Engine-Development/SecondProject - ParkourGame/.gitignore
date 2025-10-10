@@ -1,0 +1,21 @@
+# Unreal Engine ignore rules
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.uasset
+*.umap
+*.ucas
+*.utoc
+*.pak
+*.bin
+*.dll
+*.exe
+*.pdb
+*.lib
+*.dylib
+*.so
+*.app
+*.ipa
+*.zip
+*.gc

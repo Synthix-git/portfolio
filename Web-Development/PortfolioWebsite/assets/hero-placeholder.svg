@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(106,169,255,0.35)" />
+      <stop offset="100%" stop-color="rgba(122,255,200,0.15)" />
+    </linearGradient>
+    <linearGradient id="frame" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6aa9ff" />
+      <stop offset="100%" stop-color="#7affc8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="40" fill="#10151d" />
+  <rect x="18" y="18" width="764" height="564" rx="34" fill="url(#bg)" stroke="rgba(255,255,255,0.08)" stroke-width="4" />
+  <g stroke="url(#frame)" stroke-width="2" opacity="0.5">
+    <path d="M80 180 L240 120 L360 220 L520 160 L720 220" fill="none" />
+    <path d="M120 300 L220 260 L360 320 L520 260 L680 320" fill="none" />
+    <path d="M80 420 L200 360 L360 420 L540 360 L720 420" fill="none" />
+  </g>
+  <g fill="#e9eef5" opacity="0.65">
+    <rect x="120" y="160" width="160" height="24" rx="12" />
+    <rect x="120" y="210" width="220" height="18" rx="9" />
+    <rect x="120" y="240" width="180" height="18" rx="9" />
+    <rect x="120" y="270" width="200" height="18" rx="9" />
+    <rect x="120" y="340" width="260" height="18" rx="9" />
+    <rect x="120" y="370" width="200" height="18" rx="9" />
+    <rect x="120" y="440" width="220" height="18" rx="9" />
+    <rect x="120" y="470" width="180" height="18" rx="9" />
+  </g>
+  <text x="50%" y="84%" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="28" font-weight="600" fill="#e9eef5" opacity="0.8">Drop your hero image at assets/hero-placeholder.svg</text>
+</svg>

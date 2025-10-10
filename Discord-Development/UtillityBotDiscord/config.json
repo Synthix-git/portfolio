@@ -1,0 +1,10 @@
+{
+    "token": "DISCORDTOKEN",
+    "channelLiberarId": "DISCORDCHANNEL",
+    "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": ""
+}
+}

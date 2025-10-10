@@ -1,0 +1,165 @@
+[25-10-08 20:29:48.832] [main] [info] log starting at 2025-10-08T19:29:48.832Z
+[25-10-08 20:29:48.832] [jupiter] [info] log starting at 2025-10-08T19:29:48.832Z
+[25-10-08 20:29:48.832] [zenclient] [info] log starting at 2025-10-08T19:29:48.832Z
+[25-10-08 20:29:48.832] [main] [info] server session id: 08f855ac552ceb2b33dde0c7
+[25-10-08 20:29:48.832] [jupiter] [info] server session id: 08f855ac552ceb2b33dde0c7
+[25-10-08 20:29:48.832] [zenclient] [info] server session id: 08f855ac552ceb2b33dde0c7
+[25-10-08 20:29:48.832] [main] [info] Command line: C:\Users\Syn\AppData\Local\UnrealEngine\Common\Zen\Install\zenserver.exe --port 8558 --data-dir E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen --http asio --gc-cache-duration-seconds 1209600 --gc-interval-seconds 21600 --gc-low-diskspace-threshold 2147483648 --quiet --http-forceloopback --owner-pid 21364 --child-id Zen_21364_Startup
+[25-10-08 20:29:48.832] [main] [info] sentry initialized with anonymous reports
+[25-10-08 20:29:48.832] [main] [info] Unreal Zen Storage Server - using lock file at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\.lock'
+[25-10-08 20:29:48.832] [main] [info] Unreal Zen Storage Server - starting on port 8558, version '5.6.6-202504241958-windows-x64-release-f090a03'
+[25-10-08 20:29:48.832] [main] [info] Using parent pid #21364 to control process lifetime
+[25-10-08 20:29:48.832] [main] [warning] Wiping state at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen' - reason: 'No manifest present at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\root_manifest''
+[25-10-08 20:29:48.832] [main] [info] Deleting 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\.sentry-native'
+[25-10-08 20:29:49.301] [main] [warning] Delete of 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\.sentry-native' returned error: 'The process cannot access the file because it is being used by another process.'
+[25-10-08 20:29:49.301] [main] [info] Wiped all directories in data root
+[25-10-08 20:29:49.311] [main] [info] using asio HTTP server implementation
+[25-10-08 20:29:49.311] [main] [info] any debug payloads will be written to 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\debug\08f855ac552ceb2b33dde0c7'
+[25-10-08 20:29:49.311] [asio] [info] starting asio http with 12 service threads
+[25-10-08 20:29:49.312] [asio] [info] Registered local-only handler 'http://localhost:8558/' - this is not accessible from remote hosts
+[25-10-08 20:29:49.312] [asio] [info] Started asio server at 'http://[::1]:8558'
+[25-10-08 20:29:49.312] [asio] [info] asio http started (port 8558)
+[25-10-08 20:29:49.312] [main] [warning] using default encryption key
+[25-10-08 20:29:49.312] [main] [warning] using default encryption initialization vector
+[25-10-08 20:29:49.312] [main] [info] initializing storage
+[25-10-08 20:29:49.312] [main] [info] initializing CAS pool at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cas'
+[25-10-08 20:29:49.415] [main] [info] instantiating project service
+[25-10-08 20:29:49.415] [project] [info] initializing project store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\projects'
+[25-10-08 20:29:49.415] [fs] [info] Initializing Workspaces Service
+[25-10-08 20:29:49.415] [main] [info] instantiating structured cache service
+[25-10-08 20:29:49.426] [main] [info] initializing cache store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache'
+[25-10-08 20:29:49.426] [main] [info] Found 0 namespaces in 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache'
+[25-10-08 20:29:49.437] [main] [info] initializing structured cache at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue4.ddc'
+[25-10-08 20:29:49.437] [main] [info] front-end is served from embedded zip
+[25-10-08 20:29:49.437] [main] [info] initializing GC, enabled 'true', interval 6h00m, lightweight interval 15m00s
+[25-10-08 20:29:58.538] [main] [info] added process with pid 21364 as a sponsor process
+[25-10-08 20:29:58.538] [main] [info] __________                _________ __                        
+                                      \____    /____   ____    /   _____//  |_  ___________   ____  
+                                        /     // __ \ /    \   \_____  \\   __\/  _ \_  __ \_/ __ \ 
+                                       /     /\  ___/|   |  \  /        \|  | (  <_> )  | \/\  ___/ 
+                                      /_______ \___  >___|  / /_______  /|__|  \____/|__|    \___  >
+                                              \/   \/     \/          \/                         \/ 
+[25-10-08 20:29:58.538] [main] [info] Unreal Zen Storage Server now running (pid: 8016)
+[25-10-08 20:29:58.538] [main] [info] sentry crash handler ENABLED
+[25-10-08 20:29:58.538] [main] [info] shutdown monitor thread waiting for shutdown signal 'Zen_8558_Shutdown' for process 8016
+[25-10-08 20:29:58.538] [gc] [info] 0B used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 270G in use, 207G free. Disk writes last 15m00s per 30.0s [000000000000000000000000000000], peak 0B/s. Full GC in 5h59m. Lightweight GC in 14m59s.
+[25-10-08 20:30:01.156] [main] [info] initializing structured cache at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc'
+[25-10-08 20:30:01.373] [main] [info] Opened target process pid 21364 for session b963f80812b2849c00000000: success
+[25-10-08 20:30:28.547] [gc] [info] 12.4M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 270G in use, 207G free. Disk writes last 15m00s per 30.0s [000000000000000000000000000000], peak 0B/s. Full GC in 5h59m. Lightweight GC in 14m29s.
+[25-10-08 20:30:58.556] [gc] [info] 119M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000000000090], peak 424K/s. Full GC in 5h58m. Lightweight GC in 13m59s.
+[25-10-08 20:31:28.562] [gc] [info] 119M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000000000290], peak 3.54M/s. Full GC in 5h58m. Lightweight GC in 13m29s.
+[25-10-08 20:31:57.868] [asio] [warning] on data sent ERROR, connection: 68, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.868] [asio] [warning] on data sent ERROR, connection: 66, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 72, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 80, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 79, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 63, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 220, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.869] [asio] [warning] on data sent ERROR, connection: 78, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:57.870] [asio] [warning] on data sent ERROR, connection: 219, reason: 'An established connection was aborted by the software in your host machine.'
+[25-10-08 20:31:58.573] [gc] [info] 235M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000000002910], peak 3.54M/s. Full GC in 5h57m. Lightweight GC in 12m59s.
+[25-10-08 20:32:28.585] [gc] [info] 362M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000000019190], peak 3.85M/s. Full GC in 5h57m. Lightweight GC in 12m29s.
+[25-10-08 20:32:58.587] [gc] [info] 490M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000000181990], peak 4.23M/s. Full GC in 5h56m. Lightweight GC in 11m59s.
+[25-10-08 20:33:28.593] [gc] [info] 706M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000001819990], peak 4.29M/s. Full GC in 5h56m. Lightweight GC in 11m29s.
+[25-10-08 20:33:58.604] [gc] [info] 706M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000015156690], peak 7.18M/s. Full GC in 5h55m. Lightweight GC in 10m59s.
+[25-10-08 20:34:28.606] [gc] [info] 706M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000000151566910], peak 7.18M/s. Full GC in 5h55m. Lightweight GC in 10m29s.
+[25-10-08 20:34:58.617] [gc] [info] 706M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000001515669100], peak 7.18M/s. Full GC in 5h54m. Lightweight GC in 9m59s.
+[25-10-08 20:35:28.629] [gc] [info] 707M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000015156691010], peak 7.18M/s. Full GC in 5h54m. Lightweight GC in 9m29s.
+[25-10-08 20:35:58.632] [gc] [info] 882M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000000151566910110], peak 7.18M/s. Full GC in 5h53m. Lightweight GC in 8m59s.
+[25-10-08 20:36:28.641] [gc] [info] 977M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000001515669101180], peak 7.18M/s. Full GC in 5h53m. Lightweight GC in 8m29s.
+[25-10-08 20:36:58.645] [gc] [info] 977M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 271G in use, 206G free. Disk writes last 15m00s per 30.0s [000000000000000015156691011840], peak 7.18M/s. Full GC in 5h52m. Lightweight GC in 7m59s.
+[25-10-08 20:37:28.658] [gc] [info] 1010M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000000000151566910118400], peak 7.18M/s. Full GC in 5h52m. Lightweight GC in 7m29s.
+[25-10-08 20:37:58.662] [gc] [info] 1010M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000000001515669101184020], peak 7.18M/s. Full GC in 5h51m. Lightweight GC in 6m59s.
+[25-10-08 20:38:28.664] [gc] [info] 1010M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000000015156691011840210], peak 7.18M/s. Full GC in 5h51m. Lightweight GC in 6m29s.
+[25-10-08 20:38:58.910] [gc] [info] 1010M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000000151566910118402100], peak 7.18M/s. Full GC in 5h50m. Lightweight GC in 5m59s.
+[25-10-08 20:39:28.922] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000001515669101184021000], peak 7.18M/s. Full GC in 5h50m. Lightweight GC in 5m29s.
+[25-10-08 20:39:58.928] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000015156691011840210010], peak 7.18M/s. Full GC in 5h49m. Lightweight GC in 4m59s.
+[25-10-08 20:40:28.934] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000000151566910118402100110], peak 7.18M/s. Full GC in 5h49m. Lightweight GC in 4m29s.
+[25-10-08 20:40:58.942] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000001515669101184021001100], peak 7.18M/s. Full GC in 5h48m. Lightweight GC in 3m59s.
+[25-10-08 20:41:28.953] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000015156691011840210011000], peak 7.18M/s. Full GC in 5h48m. Lightweight GC in 3m29s.
+[25-10-08 20:41:58.967] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000000151566910118402100110000], peak 7.18M/s. Full GC in 5h47m. Lightweight GC in 2m59s.
+[25-10-08 20:42:28.976] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000001515669101184021001100000], peak 7.18M/s. Full GC in 5h47m. Lightweight GC in 2m29s.
+[25-10-08 20:42:58.976] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000015156691011840210011000000], peak 7.18M/s. Full GC in 5h46m. Lightweight GC in 1m59s.
+[25-10-08 20:43:28.982] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [000151566910118402100110000000], peak 7.18M/s. Full GC in 5h46m. Lightweight GC in 1m29s.
+[25-10-08 20:43:58.987] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [001515669101184021001100000000], peak 7.18M/s. Full GC in 5h45m. Lightweight GC in 59.0s.
+[25-10-08 20:44:28.990] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [015156691011840210011000000000], peak 7.18M/s. Full GC in 5h45m. Lightweight GC in 29.0s.
+[25-10-08 20:44:58.003] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [015156691011840210011000000000], peak 7.18M/s. Lightweight GC schedule triggered.
+[25-10-08 20:44:58.003] [gc] [info] GCV2: STARTING '08f8593a552ceb7c33dde0c7'
+                                          GC small objects:            yes
+                                          GC Cid store:                no
+                                          Cache cutoff time:           2025-09-24T20:44:58
+                                          Project store cutoff time:   2025-09-24T20:44:58
+                                          Build store cutoff time:     2025-10-01T20:44:58
+[25-10-08 20:44:58.016] [gc] [info] GCV2: Removing expired data from 21 referencers
+[25-10-08 20:44:58.016] [gc] [info] GCV2: Compacting using 20 store compactors
+[25-10-08 20:44:58.016] [gc] [info] GCV2: COMPLETED '08f8593a552ceb7c33dde0c7' in 0ms
+                                          GC small objects:            yes
+                                          GC Cid store:                no
+                                          Cache cutoff time:           2025-09-24T20:44:58
+                                          Project store cutoff time:   2025-09-24T20:44:58
+                                          Build store cutoff time:     2025-10-01T20:44:58
+                                    
+                                          Remove Expired Data:         0ms
+                                          Found 0 expired items out of 1897, deleted 0
+                                          Freed 0B on disk and 0B of memory
+[25-10-08 20:44:58.032] [gc] [info] garbage collection DONE in 29ms
+[25-10-08 20:44:58.032] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [015156691011840210011000000000], peak 7.18M/s. Full GC in 5h45m. Lightweight GC in 14m59s.
+[25-10-08 20:45:28.035] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [151566910118402100110000000000], peak 7.18M/s. Full GC in 5h44m. Lightweight GC in 14m29s.
+[25-10-08 20:45:58.047] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [515669101184021001100000000000], peak 7.18M/s. Full GC in 5h44m. Lightweight GC in 13m59s.
+[25-10-08 20:46:28.062] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [156691011840210011000000000000], peak 7.18M/s. Full GC in 5h43m. Lightweight GC in 13m29s.
+[25-10-08 20:46:58.065] [gc] [info] 1016M used. 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\gc': 272G in use, 205G free. Disk writes last 15m00s per 30.0s [566910118402100110000000000000], peak 7.18M/s. Full GC in 5h43m. Lightweight GC in 12m59s.
+[25-10-08 20:46:59.691] [main] [info] GC stale target process pid 21364 for session b963f80812b2849c00000000: 0x450
+[25-10-08 20:47:00.203] [main] [info] Purging stale target process cache for session: b963f80812b2849c00000000
+[25-10-08 20:47:00.885] [main] [info] Unreal Zen Storage Server exiting since sponsor processes are all gone
+[25-10-08 20:47:00.885] [main] [info] Unreal Zen Storage Server exiting
+[25-10-08 20:47:00.885] [main] [info] shutdown signal for pid 8016 received
+[25-10-08 20:47:00.885] [main] [info] Unreal Zen Storage Server cleaning up
+[25-10-08 20:47:00.897] [main] [info] flushing CAS pool at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cas'
+[25-10-08 20:47:01.025] [containercas] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cas\sobs' containing 1444 entries in 125ms
+[25-10-08 20:47:01.037] [containercas] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cas\tobs' containing 676 entries in 9ms
+[25-10-08 20:47:01.038] [main] [info] flushing cache store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache'
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacymeshdatakey
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacygeometrycollectionrenderdata
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacyskeletalmesh
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacytexture
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\animationsequence
+[25-10-08 20:47:01.038] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacychaosgeometrydata
+[25-10-08 20:47:01.055] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacymeshdatakey' containing 1 entries in 11ms
+[25-10-08 20:47:01.059] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacytexture' containing 880 entries in 13ms
+[25-10-08 20:47:01.061] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacyskeletalmesh' containing 11 entries in 14ms
+[25-10-08 20:47:01.061] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacygeometrycollectionrenderdata' containing 1 entries in 14ms
+[25-10-08 20:47:01.062] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\animationsequence' containing 11 entries in 14ms
+[25-10-08 20:47:01.062] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacychaosgeometrydata' containing 1 entries in 14ms
+[25-10-08 20:47:01.075] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacystreamedaudio
+[25-10-08 20:47:01.083] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\globalshadermap
+[25-10-08 20:47:01.083] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacycard
+[25-10-08 20:47:01.083] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacyaudio
+[25-10-08 20:47:01.086] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\materialshadermap
+[25-10-08 20:47:01.090] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacystreamedaudio' containing 3 entries in 13ms
+[25-10-08 20:47:01.100] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\globalshadermap' containing 1 entries in 10ms
+[25-10-08 20:47:01.104] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacyaudio' containing 1 entries in 13ms
+[25-10-08 20:47:01.104] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\materialshadermap' containing 4 entries in 12ms
+[25-10-08 20:47:01.105] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacycard' containing 63 entries in 15ms
+[25-10-08 20:47:01.236] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacydist
+[25-10-08 20:47:01.236] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\bulkdatapayloadid
+[25-10-08 20:47:01.243] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\staticmesh
+[25-10-08 20:47:01.247] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\bulkdatalist
+[25-10-08 20:47:01.249] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\fshaderjobcacheshaders
+[25-10-08 20:47:01.252] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacygeometrycollection
+[25-10-08 20:47:01.255] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\bulkdatapayloadid' containing 56 entries in 16ms
+[25-10-08 20:47:01.256] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacydist' containing 63 entries in 16ms
+[25-10-08 20:47:01.263] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\bulkdatalist' containing 305 entries in 12ms
+[25-10-08 20:47:01.267] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacygeometrycollection' containing 1 entries in 10ms
+[25-10-08 20:47:01.267] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\fshaderjobcacheshaders' containing 280 entries in 11ms
+[25-10-08 20:47:01.272] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\staticmesh' containing 36 entries in 24ms
+[25-10-08 20:47:01.276] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacynavcollision
+[25-10-08 20:47:01.278] [main] [info] Flushing bucket E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\materialtranslation
+[25-10-08 20:47:01.297] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\legacynavcollision' containing 37 entries in 15ms
+[25-10-08 20:47:01.297] [main] [info] wrote store snapshot for 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc\materialtranslation' containing 142 entries in 14ms
+[25-10-08 20:47:01.318] [main] [info] Flushed 19 buckets at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache\ns_ue.ddc' in 280ms
+[25-10-08 20:47:01.318] [project] [info] flushing project store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\projects'
+[25-10-08 20:47:01.318] [cache] [info] closing structured cache
+[25-10-08 20:47:01.318] [main] [info] closing cache store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cache'
+[25-10-08 20:47:01.601] [project] [info] closing project store at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\projects'
+[25-10-08 20:47:01.601] [main] [info] closing Cas pool at 'E:\CODEPROJECT\UnrealEngine\FirstPersonTemplate\Content\Zen\cas'
+[25-10-08 20:47:01.765] [main] [info] log ending at 2025-10-08T19:47:01.765Z

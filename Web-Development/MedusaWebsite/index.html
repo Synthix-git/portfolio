@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junta-te ao Medusa Roleplay, um servidor FiveM português onde a narrativa, a imersão e a comunidade moldam todas as sessões RP.">
+    <meta name="keywords" content="GTA, Roleplay, FiveM, Medusa Roleplay, GTA V RP, Comunidade RP, Portugal, Servidor GTA RP">
+    <meta name="author" content="Synthix">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <meta property="og:title" content="Medusa Roleplay - O Melhor RP de GTA">
+    <meta property="og:description" content="Entra no nosso servidor de GTA Roleplay e vive uma experiência imersiva!">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://www.medusarp.pt">
+    <meta property="og:type" content="website">
+    <title>Medusa Roleplay | FiveM Roleplay Português</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="no-js">
+
+    <header class="site-header" data-scrolled="false">
+        <div class="header-inner">
+            <a href="#home" class="brand" aria-label="Medusa Roleplay">
+                <img src="images/logo.png" alt="" class="brand__mark">
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Abrir menu de navegação</span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <nav id="primary-nav" class="site-nav" aria-label="Principal">
+                <ul>
+                    <li><a href="#status">Estado</a></li>
+                    <li><a href="#how-to">Entrar</a></li>
+                    <li><a href="#staff">Staff</a></li>
+                    <li><a href="#core">Framework</a></li>
+                    <li><a href="#developer">Dev</a></li>
+                    <li><a href="#discord">Discord</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section section--hero" aria-labelledby="hero-title">
+            <div class="section__media" data-hero-images="images/home-bg.jpg,images/about-bg.jpg,images/discord-bg.jpg" aria-hidden="true">
+                <div class="section__overlay"></div>
+            </div>
+            <div class="shell">
+                <div class="hero">
+                    <p class="eyebrow">FiveM RP • Portugal</p>
+                    <h1 id="hero-title">Um novo Medusa com a mesma ambição de fazer história</h1>
+                    <p class="lead">Depois de duas temporadas memoráveis, regressamos com frameworks atualizados, economia revista e uma equipa pronta para apoiar cada personagem que pisa Los Santos.</p>
+                    <div class="hero__actions">
+                        <button type="button" class="btn btn--primary" data-connect="fivem://connect/playmedusa.ovh">Jogar Agora</button>
+                        <a href="#discord" class="btn btn--secondary">
+                            <i class="fab fa-discord" aria-hidden="true"></i>
+                            Entrar no Discord
+                        </a>
+                    </div>
+                    <ul class="hero__meta">
+                        <li class="meta-card">
+                            <div class="meta-card__icon">
+                                <i class="fas fa-plug" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="meta-card__title">IP Direta</h3>
+                            <p class="meta-card__value">playmedusa.ovh</p>
+                            <button class="meta-card__action" type="button" data-copy="playmedusa.ovh">
+                                <i class="far fa-copy" aria-hidden="true"></i>
+                                <span>Copiar IP</span>
+                            </button>
+                        </li>
+                        <li class="meta-card">
+                            <div class="meta-card__icon">
+                                <i class="fas fa-server" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="meta-card__title">Capacidade</h3>
+                            <p class="meta-card__value">2048 Slots</p>
+                            <p class="meta-card__note">Infraestrutura otimizada para 2048 jogadores.</p>
+                        </li>
+                        <li class="meta-card">
+                            <div class="meta-card__icon">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="meta-card__title">Whitelist</h3>
+                            <p class="meta-card__value">Automática + Manual</p>
+                            <a class="meta-card__action meta-card__link" href="#how-to">Ver processo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="status" class="section section--accent">
+            <div class="shell">
+                <div class="section__header">
+                    <p class="eyebrow">Estado do servidor</p>
+                    <h2>Online e preparado para a tua história</h2>
+                    <p>Monitorizamos o Medusa Roleplay em tempo real para garantir sessões estáveis, eventos frequentes e suporte imediato através do nosso Discord.</p>
+                </div>
+                <div class="status-grid">
+                    <article class="status-card">
+                        <i class="fas fa-signal" aria-hidden="true"></i>
+                        <div>
+                            <span class="label">Estado</span>
+                            <span class="status-badge" data-status-badge>Online</span>
+                            <small class="muted">Sincronizado com medidor interno</small>
+                        </div>
+                    </article>
+                    <article class="status-card status-card--cta">
+                        <i class="fas fa-link" aria-hidden="true"></i>
+                        <div class="status-cta">
+                            <span class="label">Ligação imediata</span>
+                            <div class="status-actions status-actions--stack">
+                                <button class="status-btn" type="button" data-copy="fivem://connect/playmedusa.ovh">
+                                    <i class="far fa-copy" aria-hidden="true"></i>
+                                    <span>Copiar IP</span>
+                                </button>
+                                <a class="status-btn status-btn--link" href="fivem://connect/playmedusa.ovh" data-connect="fivem://connect/playmedusa.ovh">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                    <span>Abrir no FiveM</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="status-card">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <span class="label">Uptime</span>
+                            <span class="value">99.30%</span>
+                            <small class="muted">Últimas 24h monitorizadas</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section section--dark">
+            <div class="shell shell--split">
+                <div class="section__content">
+                    <p class="eyebrow">Quem somos</p>
+                    <h2>Histórico de comunidade, energia de servidor novo</h2>
+                    <p>O Medusa Roleplay regressa como “Um novo Medusa”: depois de fases em 2019 e 2022 que marcaram a cena RP portuguesa, juntámos tecnologia recente, economia revista e uma equipa de mentores dedicada.</p>
+                    <p>Quer estejas a começar ou sejas veterano, damos-te ferramentas para criar personagens memoráveis, com regras claras, lore documentado e eventos que colocam os jogadores no centro da narrativa.</p>
+                    <ul class="list list--check">
+                        <li>Economia dinâmica que reage ao mercado e à ação dos jogadores.</li>
+                        <li>Whitelist guiada com mentores disponíveis no Discord.</li>
+                        <li>Staff ativa 24/7, preparada para mediação e suporte técnico.</li>
+                    </ul>
+                </div>
+                <aside class="section__aside">
+                    <div class="card card--glass">
+                        <div class="card__body">
+                            <h3>Construído para durar</h3>
+                            <p>Framework proprietário, monitorização em tempo real e atualizações contínuas alimentadas pela comunidade.</p>
+                            <ul class="mini-list">
+                                <li><i class="fas fa-database" aria-hidden="true"></i> Telemetria detalhada</li>
+                                <li><i class="fas fa-route" aria-hidden="true"></i> Eventos semanais temáticos</li>
+                                <li><i class="fas fa-hands-helping" aria-hidden="true"></i> Mentoria ativa no onboarding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="staff" class="section section--light section--staff">
+            <div class="shell shell--split">
+                <div class="section__content">
+                    <p class="eyebrow">Recrutamento</p>
+                    <h2>Sê parte da equipa Medusa</h2>
+                    <p>A equipa do Medusa Roleplay está à procura de novos membros para a staff. Se tens vontade de apoiar a comunidade e ajudar a fazer crescer o servidor, esta é a tua oportunidade.</p>
+                    <p class="staff-highlight">&#128640; Procuramos pessoas responsáveis, comunicativas e prontas para responder aos desafios de um servidor em constante evolução.</p>
+                    <h3>Requisitos básicos</h3>
+                    <ul class="list list--check">
+                        <li>Ser ativo e disponível para marcar presença no servidor.</li>
+                        <li>Participar nas calls da staff sempre que necessário.</li>
+                        <li>Demonstrar responsabilidade, maturidade e espírito de equipa.</li>
+                    </ul>
+                    <div class="staff-actions">
+                        <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSf7_pWR_jRQ_HjblxERG4fPKc9Za6TjiARJ-UGNxwm2Ze_B2A/viewform?usp=dialog" target="_blank" rel="noopener">
+                            Candidatar-me
+                        </a>
+                        <a class="btn btn--ghost" href="#discord">Falar com a comunidade</a>
+                    </div>
+                </div>
+                <aside class="section__aside">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <span class="stat-card__icon"><i class="fas fa-headset" aria-hidden="true"></i></span>
+                            <span class="stat-label">Suporte diário</span>
+                            <span class="stat-value">24/7</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card__icon"><i class="fas fa-user-friends" aria-hidden="true"></i></span>
+                            <span class="stat-label">Staffs ativos</span>
+                            <span class="stat-value">11</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card__icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></span>
+                            <span class="stat-label">Eventos mensais</span>
+                            <span class="stat-value">8+</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-card__icon"><i class="fas fa-users" aria-hidden="true"></i></span>
+                            <span class="stat-label">Comunidade</span>
+                            <span class="stat-value">200+</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="how-to" class="section section--accent">
+            <div class="shell shell--split shell--reverse">
+                <aside class="section__aside">
+                    <div class="card card--gradient">
+                        <h3>Guia rápido para começar</h3>
+                        <p>Demora minutos a ficar pronto: segue os passos e liberta o teu ID para entrar oficialmente.</p>
+                    </div>
+                </aside>
+                <div class="section__content">
+                    <p class="eyebrow">Como entrar</p>
+                    <h2>Três passos para arrancares sem stress</h2>
+                    <ol class="steps">
+                        <li>
+                            <span class="steps__number">1</span>
+                            <div>
+                                <h3>Junta-te ao Discord</h3>
+                                <p>Entra em <a href="https://discord.gg/35XmeNXEDR">discord.gg/35XmeNXEDR</a>, aceita as regras e abre os canais de onboarding.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="steps__number">2</span>
+                            <div>
+                                <h3>Gera o teu ID</h3>
+                                <p>Usa <span class="highlight">Jogar Agora</span> ou <code>F8 &gt; connect playmedusa.ovh</code> no FiveM para obteres o número de identificação.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="steps__number">3</span>
+                            <div>
+                                <h3>Liberta e confirma</h3>
+                                <p>Utiliza o nosso bot na sala <strong>#liberar-id</strong> para receber whitelist em poucos segundos, volta a ligar através do botão ou do F8.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="core" class="section section--dark">
+            <div class="shell">
+                <div class="section__header">
+                    <p class="eyebrow">Framework</p>
+                    <h2>Core features do Syn Network</h2>
+                    <p>Resumo das peças-chave desenvolvidas por Synthix para manter o Medusa flexível, monitorizado e preparado para escalar.</p>
+                </div>
+                <div class="carousel" data-carousel="core">
+                    <div class="carousel__viewport">
+                        <div class="carousel__track" role="list">
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-boxes" aria-hidden="true"></i></span>
+                                <h3>Inventário persistente</h3>
+                                <p class="carousel__summary">Logs & restauros</p>
+                                <p class="carousel__body">Registo completo de itens, auditoria anti-exploit e restauros instantâneos mesmo após reinícios.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></span>
+                                <h3>Economia dinâmica</h3>
+                                <p class="carousel__summary">Jobs e recompensas</p>
+                                <p class="carousel__body">Autocarros, táxis, mineração e assaltos equilibrados com ajustes automáticos de recompensa.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-users-cog" aria-hidden="true"></i></span>
+                                <h3>Operações comunitárias</h3>
+                                <p class="carousel__summary">Eventos e changelog</p>
+                                <p class="carousel__body">Calendário semanal, changelog rápido e pipeline de hotfixes coordenado por equipa multidisciplinar.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-tools" aria-hidden="true"></i></span>
+                                <h3>Ferramentas de staff</h3>
+                                <p class="carousel__summary">Moderação em tempo real</p>
+                                <p class="carousel__body">Painéis de controlo, toggles de incidentes e ligação direta ao Discord para decisões rápidas.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-route" aria-hidden="true"></i></span>
+                                <h3>Onboarding orientado</h3>
+                                <p class="carousel__summary">Whitelist acompanhada</p>
+                                <p class="carousel__body">Fluxo automático com backups, logging detalhado e mentores que te acompanham no primeiro dia.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                                <h3>Telemetria &amp; alertas</h3>
+                                <p class="carousel__summary">Dashboards operacionais</p>
+                                <p class="carousel__body">Métricas acessíveis, alertas de scripts e reporting diário para decisões informadas.</p>
+                            </article>
+                            <article class="carousel__slide" role="listitem">
+                                <span class="carousel__icon"><i class="fas fa-film" aria-hidden="true"></i></span>
+                                <h3>Eventos cinematográficos</h3>
+                                <p class="carousel__summary">Storytelling in-game</p>
+                                <p class="carousel__body">Ferramentas internas para eventos PvE/PvP com cutscenes, loot exclusivo e narrativa personalizada.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel__controls">
+                        <div class="carousel__dots"></div>
+                        <div class="carousel__arrows">
+                            <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Slide anterior">
+                                <span aria-hidden="true">‹</span>
+                            </button>
+                            <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Slide seguinte">
+                                <span aria-hidden="true">›</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section--light">
+            <div class="shell">
+                <div class="section__header">
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Dúvidas frequentes</h2>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Como libero o meu ID no Discord?</summary>
+                        <p>Assim que gerares o ID no FiveM, abre a sala <strong>#liberar-id</strong>, indica o número e aguarda a resposta da staff. Se precisares de ajuda, abre um ticket no mesmo Discord.</p>
+                    </details>
+                    <details>
+                        <summary>O contador de jogadores é mesmo em tempo real?</summary>
+                        <p>Sim, tentamos sincronizar com <a href="https://cfx.re/join/5j6voa" target="_blank" rel="noopener">cfx.re/join/5j6voa</a>. Se o serviço estiver protegido por Cloudflare e o pedido falhar, mostramos um valor estimado para não interromper a experiência.</p>
+                    </details>
+                    <details>
+                        <summary>Preciso de experiência prévia em roleplay?</summary>
+                        <p>Não. Temos mentores e sessões de treino. O importante é respeitar as regras e trazer vontade de aprender.</p>
+                    </details>
+                    <details>
+                        <summary>Existe idade mínima?</summary>
+                        <p>Recomendamos 16+ anos. Casos excecionais são analisados diretamente pela staff.</p>
+                    </details>
+                    <details>
+                        <summary>Posso streamar ou criar conteúdo?</summary>
+                        <p>Claro. Disponibilizamos overlays, whitelist prioritária e canais para promover o teu conteúdo ao vivo.</p>
+                    </details>
+                    <details>
+                        <summary>Quanto tempo demora a whitelist?</summary>
+                        <p>A whitelist demora apenas uns segundos através do nosso bot de discord.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="developer" class="section section--light">
+            <div class="shell shell--split">
+                <div class="section__content">
+                    <p class="eyebrow">Developer</p>
+                    <h2>Gabriel “Synthix” Silva</h2>
+                    <p>Gameplay programmer português com mais de 16 anos em Live Ops, frameworks FiveM e gestão de comunidade. Responsável pelo Syn Network Framework que sustenta o Medusa Roleplay.</p>
+                    <p>Combina programação (Lua, C++, C# e SQL), direção criativa e produção de UI para garantir que cada sistema tem identidade própria, telemetria acionável e suporte à comunidade.</p>
+                    <div class="dev-actions">
+                        <a class="btn btn--primary" href="https://playmedusa.ovh/synthix" target="_blank" rel="noopener">Ver portefólio</a>
+                        <a class="btn btn--ghost" href="https://discord.gg/3JMeMN2fDS" target="_blank" rel="noopener">Discord Dev Diaries</a>
+                    </div>
+                </div>
+                <aside class="section__aside">
+                    <div class="dev-grid">
+                        <div class="dev-card">
+                            <span class="dev-card__icon"><i class="fas fa-history" aria-hidden="true"></i></span>
+                            <span class="dev-label">Experiência</span>
+                            <span class="dev-value">16 anos</span>
+                            <span class="dev-note">Live Ops &amp; Comunidades</span>
+                        </div>
+                        <div class="dev-card">
+                            <span class="dev-card__icon"><i class="fas fa-code" aria-hidden="true"></i></span>
+                            <span class="dev-label">Stacks</span>
+                            <span class="dev-value">Lua • C++ • SQL</span>
+                            <span class="dev-note">Frameworks FiveM proprietários</span>
+                        </div>
+                        <div class="dev-card">
+                            <span class="dev-card__icon"><i class="fas fa-hands-helping" aria-hidden="true"></i></span>
+                            <span class="dev-label">Mentoria</span>
+                            <span class="dev-value">Daily</span>
+                            <span class="dev-note">Dev diaries e sessões 1:1</span>
+                        </div>
+                        <div class="dev-card">
+                            <span class="dev-card__icon"><i class="fas fa-palette" aria-hidden="true"></i></span>
+                            <span class="dev-label">Design</span>
+                            <span class="dev-value">UI/Branding</span>
+                            <span class="dev-note">Identidade Medusa &amp; material promocional</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="discord" class="section section--discord">
+            <div class="shell shell--center">
+                <img src="images/logohome.png" alt="" class="discord__logo" aria-hidden="true">
+                <p class="eyebrow">Comunidade Medusa</p>
+                <h2>Salta para o nosso Discord e começa a tua história</h2>
+                <p>Canal de anúncios, tickets, eventos semanais, partilha de clips e marketplace ativo para roleplayers.</p>
+                <div class="cta-group">
+                    <a href="https://discord.gg/35XmeNXEDR" class="btn btn--discord">
+                        <i class="fab fa-discord" aria-hidden="true"></i>
+                        discord.gg/35XmeNXEDR
+                    </a>
+                    <button class="btn btn--ghost btn--icon" type="button" data-connect="fivem://connect/playmedusa.ovh">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        Jogar Agora
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+        <div class="shell shell--footer">
+            <p>&copy; 2025 Medusa Roleplay. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#faq">Regras &amp; FAQ</a></li>
+                <li><a href="https://discord.gg/35XmeNXEDR">Discord</a></li>
+                <li><a href="https://playmedusa.ovh/synthix" target="_blank" rel="noopener">Portefólio Synthix</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

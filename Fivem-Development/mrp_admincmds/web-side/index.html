@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medusa Roleplay — Visualizador de Roupas</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta http-equiv="Cache-Control" content="no-store" />
+</head>
+<body>
+  <div id="app" class="hide">
+    <div class="modal">
+      <header class="modal__header">
+        <div class="title">
+          <span class="dot"></span>
+          <h1>MRP - ROUPAS PERSONAGEM</h1>
+        </div>
+        <button id="btnClose" class="btn ghost">Fechar (Esc)</button>
+      </header>
+
+      <div class="meta">
+        <div class="meta__item"><strong>Género:</strong> <span id="gender">-</span></div>
+      </div>
+
+      <div class="cards" id="cards"></div>
+
+      <div class="code-wrapper">
+        <div class="code-header">
+          <h2>Formato Lua</h2>
+          <div class="actions">
+            <button id="btnCopyLua" class="btn">Copiar Lua</button>
+          </div>
+        </div>
+        <pre id="luaBlock" class="code"></pre>
+      </div>
+
+      <div class="code-wrapper">
+        <div class="code-header">
+          <h2>Formato JSON</h2>
+          <div class="actions">
+            <button id="btnCopyJSON" class="btn ghost">Copiar JSON</button>
+          </div>
+        </div>
+        <pre id="jsonBlock" class="code"></pre>
+      </div>
+
+      <footer class="footer">
+        <span>Dica: usa <kbd>/vroupas</kbd> após mudares de roupa.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

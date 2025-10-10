@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Blitz - Fast-Paced Reaction Game by Syn</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="game-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🎯 Target Blitz</h1>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="game">Play</button>
+                <button class="nav-tab" data-tab="leaderboard">Leaderboard</button>
+                <button class="nav-tab" data-tab="stats">Stats</button>
+            </div>
+            <div class="nav-controls">
+                <button class="sound-toggle" id="soundToggle">🔊</button>
+                <button class="settings-btn" id="settingsBtn">⚙️</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+        <div class="hero-background" id="heroBackground"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-text">Target Blitz</span>
+                <span class="title-subtitle">Test Your Reflexes!</span>
+            </h1>
+            <p class="hero-description">
+                Click the moving targets as fast as you can! Build combos, avoid bombs, and climb the leaderboard in this addictive reaction game.
+            </p>
+            <button class="start-game-btn" id="startGameBtn">
+                <span class="btn-text">Start Game</span>
+                <span class="btn-icon">🚀</span>
+            </button>
+            <div class="game-features">
+                <div class="feature">
+                    <span class="feature-icon">⚡</span>
+                    <span class="feature-text">Fast-paced action</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🏆</span>
+                    <span class="feature-text">Global leaderboard</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📱</span>
+                    <span class="feature-text">Mobile friendly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section class="game-section" id="gameSection">
+        <div class="game-container">
+            <!-- Game UI -->
+            <div class="game-ui">
+                <div class="score-display">
+                    <div class="score-item">
+                        <span class="score-label">Score</span>
+                        <span class="score-value" id="currentScore">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Time</span>
+                        <span class="score-value" id="gameTimer">60</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Combo</span>
+                        <span class="score-value" id="comboMultiplier">1x</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Level</span>
+                        <span class="score-value" id="currentLevel">1</span>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="control-btn pause-btn" id="pauseBtn">⏸️</button>
+                    <button class="control-btn restart-btn" id="restartBtn">🔄</button>
+                </div>
+            </div>
+
+            <!-- Game Area -->
+            <div class="game-area" id="gameArea">
+                <div class="game-canvas-container">
+                    <canvas id="gameCanvas" class="game-canvas"></canvas>
+                    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+                    <div class="game-overlay" id="gameOverlay">
+                        <div class="pause-overlay" id="pauseOverlay">
+                            <h2>Game Paused</h2>
+                            <button class="resume-btn" id="resumeBtn">Resume</button>
+                        </div>
+                        <div class="game-over-overlay" id="gameOverOverlay">
+                            <h2>Game Over!</h2>
+                            <div class="final-score">
+                                <span class="final-score-label">Final Score</span>
+                                <span class="final-score-value" id="finalScore">0</span>
+                            </div>
+                            <div class="game-over-actions">
+                                <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+                                <button class="submit-score-btn" id="submitScoreBtn">Submit Score</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Bars -->
+            <div class="progress-bars">
+                <div class="progress-item">
+                    <span class="progress-label">Level Progress</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="levelProgress"></div>
+                    </div>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Accuracy</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="accuracyProgress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section" id="leaderboardSection">
+        <div class="section-header">
+            <h2>🏆 Leaderboard</h2>
+            <p>Top players from around the world</p>
+        </div>
+        
+        <div class="leaderboard-container">
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="today">Today</button>
+                <button class="tab-btn" data-tab="week">This Week</button>
+                <button class="tab-btn" data-tab="alltime">All Time</button>
+            </div>
+            
+            <div class="leaderboard-list" id="leaderboardList">
+                <!-- Leaderboard entries will be populated by JavaScript -->
+            </div>
+            
+            <div class="personal-best">
+                <h3>Your Personal Best</h3>
+                <div class="best-score" id="personalBest">
+                    <span class="best-score-value">0</span>
+                    <span class="best-score-rank">Not ranked yet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" id="statsSection">
+        <div class="section-header">
+            <h2>📊 Your Statistics</h2>
+            <p>Track your progress and improvement</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-value" id="gamesPlayed">0</div>
+                <div class="stat-label">Games Played</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-value" id="highScore">0</div>
+                <div class="stat-label">High Score</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-value" id="totalTargets">0</div>
+                <div class="stat-label">Targets Hit</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-value" id="bestCombo">0</div>
+                <div class="stat-label">Best Combo</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-value" id="averageScore">0</div>
+                <div class="stat-label">Average Score</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value" id="playTime">0h</div>
+                <div class="stat-label">Play Time</div>
+            </div>
+        </div>
+        
+        <div class="stats-chart-container">
+            <h3>Score History</h3>
+            <div class="chart-wrapper">
+                <canvas id="statsChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Score Submission Modal -->
+    <div class="modal-overlay" id="scoreModal">
+        <div class="modal-content">
+            <h2>New High Score!</h2>
+            <div class="modal-score">
+                <span class="modal-score-label">Your Score:</span>
+                <span class="modal-score-value" id="modalScore">0</span>
+            </div>
+            <div class="modal-input">
+                <label for="playerName">Enter your name:</label>
+                <input type="text" id="playerName" placeholder="Your Name" maxlength="20">
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel-btn" id="cancelSubmit">Cancel</button>
+                <button class="modal-btn submit-btn" id="confirmSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="setting-group">
+                <label>Sound Effects</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="soundEffects" checked>
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <div class="setting-group">
+                <label>Background Music</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="backgroundMusic" checked>
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <div class="setting-group">
+                <label>Particle Effects</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="particleEffects" checked>
+                    <span class="slider"></span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn close-btn" id="closeSettings">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="game-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Target Blitz by Syn - Built with ❤️</p>
+            <div class="footer-links">
+                <a href="https://playmedusa.ovh/synthix">About me</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- Game Script -->
+    <script src="script.js"></script>
+</body>
+</html>
